@@ -1,0 +1,17 @@
+import canonicalLaneMathlib.AdmissibleClass
+import GrowthBoundednessComparisonSolutionsDifferenceCanonicalLaneLean.GrowthBoundednessComparison
+import GrowthBoundednessComparisonSolutionsDifferenceCanonicalLaneLean.ComparisonSolutions
+import GrowthBoundednessComparisonSolutionsDifferenceCanonicalLaneLean.DifferenceEstimates
+
+namespace HautevilleHouse
+namespace GrowthBoundednessComparisonSolutionsDifferenceCanonicalLaneLean
+
+def GrowthBoundednessClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem growth_boundedness_endgame (A : AdmissibleClass) :
+    GrowthBoundednessClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end GrowthBoundednessComparisonSolutionsDifferenceCanonicalLaneLean
+end HautevilleHouse
